@@ -1,18 +1,19 @@
 // @flow
-import * as React from 'react'
-import DigitalServices from './pages/DigitalServices'
+import * as React from "react";
+import DigitalServices from "./pages/DigitalServices";
+import Sucess from "./pages/Sucess";
 
 type Props = {
   show: boolean,
-}
+};
 
 class App extends React.Component<Props> {
   render(): any {
     return (
       <div>
-        <DigitalServices />
+        <Sucess />
       </div>
-    )
+    );
   }
 }
-export default App
+export default App;
