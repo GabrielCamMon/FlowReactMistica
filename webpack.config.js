@@ -1,16 +1,18 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, 'public', 'dist'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, "public", "dist"),
+    filename: "bundle.js",
+    publicPath: "/",
   },
   devServer: {
     port: 8080,
     compress: true,
+    historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, "public"),
     },
   },
   module: {
@@ -18,15 +20,15 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
@@ -35,4 +37,4 @@ module.exports = {
     //   template: path.join(__dirname, '/public/index.html'),
     // }),
   ],
-}
+};
